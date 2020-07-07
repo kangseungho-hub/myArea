@@ -1,0 +1,98 @@
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Whatever </title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/widget.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/dailyword.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menubar.css' %}" />
+    <meta name="viewport" content="width=decive-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="DeathNoteMomentum-container bgImage">
+        <div class="momentum-container">
+            <div class="container">
+                <div class=" js-clock ">
+                    <span class="js-country-info "> </span>
+                    <h1 class="js-time "> 00:00 </h1>
+                </div>
+
+
+                <form class=" js-form form ">
+                    <input type="text " placeholder="What is your name? " />
+
+                </form>
+                <h4 class="js-greetings greetings hoverbigger "></h4>
+
+                <form class="js-toDoForm ">
+                    <input type="text " class="inputToDo " placeholder="Write a to Do ">
+                </form>
+
+                <ul class="js-toDoList ">
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="widget-container1">
+            <div class="rapidmove-container">
+                <div class="rapidmove rapidmove-youtube">
+                    <a href="https://youtube.com" class="rapidmove-link"><img class="rapidmove-icon rapidmove-top-icon" src="{% static 'images/youtube-icon.png' %} "></a>
+                </div>
+
+                <div class="rapidmove rapidmove-google">
+                    <a href="https:www.google.co.kr" class="rapidmove-link"><img class="rapidmove-icon" src="{% static 'images/google-icon.png' %} "></a>
+                </div>
+
+                <div class="rapidmove rapidmove-github">
+                    <a href="https://www.github.com" class="rapidmove-link"><img class="rapidmove-icon" src="{% static 'images/github-icon.png' %}"></a>
+                </div>
+
+                <div class="rapidmove rapidmove-facebook">
+                    <a href="https://www.facebook.com" class="rapidmove-link"><img class="rapidmove-icon" src="{% static 'images/facebook-icon.png' %}"></a>
+                </div>
+
+                <div class="rapidmove rapidmove-translate">
+                    <a href="https://translate.google.co.kr/" class="rapidmove-link"><img class="rapidmove-icon" src="{% static 'images/translate-icon.png' %}"></a>
+                </div>
+
+                <div class="rapidmove rapidmove-translate">
+                    <a href="https://www.netflix.com/" class="rapidmove-link"><img class="rapidmove-icon" src="{% static 'images/netflix-icon.png' %}"></a>
+                </div>
+
+                <div class="rapidmove rapidmove-translate">
+                    <a href="https://www.naver.com" class="rapidmove-link"> <img class="rapidmove-icon" src="{% static 'images/naver-icon.png' %}"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menubar-container">
+            <div class="menubar-element">
+                <a class="menu-link menu-first" href="{% url 'mylab:home'%}"><img class="menu-icon" src="{% static 'images/star-icon.png' %}"> My Lab </a>
+            </div>
+
+            <div class="menubar-element">
+                <a class="menu-link menu-first" href="{% url 'mylab:home'%}"><img class="menu-icon" src="{% static 'images/League-icon.png' %}"> My Lab</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+
+<script src=" {% static 'js/greeting.js' %} "></script>
+<script src="{% static 'js/toDo.js' %} "></script>
+<script src="{% static 'js/bg.js' %} "></script>
+<script src="{% static 'js/weather.js' %} "></script>
+<script src="{% static 'js/clock.js' %} "></script>
+
+
+
+
+</html>

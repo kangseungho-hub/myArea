@@ -1,0 +1,19 @@
+.dailyWord-container {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: white;
+}
+
+.dailyWord-container>div {
+    float: left;
+}
+
+.dailyWord {
+    color: gray;
+    border-right: 1px solid;
+    font-family: cursive;
+}

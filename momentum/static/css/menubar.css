@@ -1,0 +1,66 @@
+.menubar-container {
+    font-family: "D";
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: transparent;
+    /* background : transparent; */
+}
+
+.menubar-element:hover {
+    transform: translate(-100px);
+    color: red;
+}
+
+.menubar-element {
+    color: black;
+    position: relative;
+    left: 150px;
+    width: 90%;
+    margin-top: 15px;
+    overflow: hidden;
+    font-size: 30px;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-link {
+    color: black;
+    overflow: hidden;
+    transition: 1s all ease;
+    padding: 0;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    color: red;
+}
+
+
+/* .menu-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    z-index: -1;
+}
+
+.menu-link:hover::before {
+    width: 100%;
+} */
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 0px;
+    vertical-align: middle;
+}
