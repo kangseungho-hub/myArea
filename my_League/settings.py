@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'my_League.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'opensource',
+        'NAME': 'MyArea',
         'USER': 'root',
         'PASSWORD': 'kmckshkmc',
         'HOST': 'localhost',

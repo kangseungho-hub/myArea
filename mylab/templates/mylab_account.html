@@ -1,0 +1,61 @@
+{% extends "mylab_base.html" %} {% load static %} {% block container%}
+
+<link rel="stylesheet" href="{% static 'css/account.css'%}">
+<link rel="stylesheet" href="{% static 'css/account-modal.css'%}">
+
+<div class="account-input-container">
+    <div class="Login-modal account-modal-container">
+        <button class="account-modal-close-btn" onclick="modalCloseHandler('.Login-modal')"><i class="fas fa-times"></i></button>
+        <form method="POST" action="#" class="account-form">
+            {{LoginForm}}
+            <button class="account-btn account-form-submit-btn"><i class="fas fa-arrow-right"></i></button>
+        </form>
+    </div>
+
+    <div class="Signup-modal account-modal-container">
+        <button class="account-modal-close-btn" onclick="modalCloseHandler('.Signup-modal')"><i class="fas fa-times"></i></button>
+
+        <form method="POST" action="#" class="account-form">
+            {{SignupForm}}
+            <button class="account-btn account-form-submit-btn signup-btn">Register</button>
+
+            <div class="username-error invalid">
+                <p class="username-error-text"></p>
+            </div>
+
+            <div class="email-error invalid">
+                <p class="email-error-text"></p>
+            </div>
+
+            <div class="password-error invalid">
+                <p class="password-error-text"></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="Find-Account-modal account-modal-container">
+        <button class="account-modal-close-btn" onclick="modalCloseHandler('.Signup-modal')"><i class="fas fa-times"></i></button>
+
+        <form method="POST" action="#" class="account-form">
+            {{FindAccountForm}}
+            <button class="account-btn account-form-submit-btn">Send Mail</button>
+        </form>
+    </div>
+
+
+</div>
+
+
+
+
+<div class="account-btn-container">
+    <div class="account-btn-box">
+        <button class="modal-toggler account-btn" onclick="accountModalToggleHandler('.Login-modal')"> login </button>
+        <button class="go-signup account-btn" onclick="accountModalToggleHandler('.Signup-modal')">signup</button>
+        <button class="find-account account-btn" onclick="accountModalToggleHandler('.Find-Account-modal')">Find Account</button>
+    </div>
+</div>
+
+<script src="{% static 'js/signup-validator.js' %}"></script>
+<script src="{% static 'js/account-modal.js' %}"></script>
+{% endblock %}

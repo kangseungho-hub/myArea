@@ -27,7 +27,7 @@ body {
     height: auto;
     min-height: 100%;
     z-index: -1;
-    animation: fadeIn .5s linear;
+    animation: fadeIn 0.5s linear;
     background-image: url("../images/DeathNote_L.jpg");
     background-position: center;
     background-size: cover;

@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.bgImage {
+    position: fixed;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: -1;
+    background-image: url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: auto;
+    animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

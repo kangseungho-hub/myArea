@@ -1,0 +1,106 @@
+.select-lab-toggler {
+    margin: 0;
+    position: fixed;
+    border: none;
+    background: none;
+    top: 0px;
+    right: 5px;
+    font-size: 50px;
+    overflow: hidden;
+    color: rgb(96, 190, 134);
+    transition-timing-function: ease-in-out;
+}
+
+.select-lab-toggler:hover {
+    border-width: 1px;
+    cursor: pointer;
+    animation-name: blinking;
+    animation-iteration-count: infinite;
+    animation-duration: 0.5s;
+}
+
+@keyframes blinking {
+    0% {
+        font-size: 50px;
+    }
+    50% {
+        font-size: 60px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
+
+.select-lab {
+    overflow: auto;
+    text-align: center;
+    font-size: 100px;
+}
+
+.select-lab-close-btn:hover {
+    font-size: 40px;
+}
+
+.lab-container {
+    margin: 0px;
+    padding: 0px;
+    margin-top: 100px;
+}
+
+.lab-container>.lab {
+    float: left;
+}
+
+.select-lab-close-btn {
+    position: fixed;
+    display: block;
+    margin-bottom: 50px;
+    top: 5px;
+    left: 5px;
+    margin: 20px;
+    border: none;
+    background: none;
+    color: rgb(96, 190, 134);
+    font-size: 30px;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+}
+
+.lab {
+    color: rgb(96, 190, 134);
+    margin: 60px;
+    width: 300px;
+    height: 300px;
+    border: none;
+    top: 40%;
+}
+
+.lab:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.lab-link {
+    position: relative;
+    top: 30%;
+    text-decoration: none;
+}
+
+.logo {
+    width: 0%;
+    height: 0%;
+    animation: bigger 0.5s ease forwards;
+}
+
+@keyframes bigger {
+    0% {}
+    100% {
+        width: 40%;
+        height: 40%
+    }
+}
+
+.lab-name {
+    font-size: 50px;
+}
