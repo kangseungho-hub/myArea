@@ -1,22 +1,27 @@
 {% extends "mylab_base.html" %} {% load static %} {% block container%}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/account.css'%}">
 <link rel="stylesheet" href="{% static 'css/account-modal.css'%}">
+<link rel="stylesheet" href="{% static 'css/loading.css' %}">
+
 
 <div class="account-input-container">
     <div class="Login-modal account-modal-container">
         <button class="account-modal-close-btn" onclick="modalCloseHandler('.Login-modal')"><i class="fas fa-times"></i></button>
-        <form method="POST" action="#" class="account-form">
-            {{LoginForm}}
+        <form method="POST" action="{% url 'mylab:login' %}" class="account-form login-form">
+            {% csrf_token %} {% for field in LoginForm %} {{field}} {{field.errors}}{% endfor %}
             <button class="account-btn account-form-submit-btn"><i class="fas fa-arrow-right"></i></button>
         </form>
     </div>
 
+
+
     <div class="Signup-modal account-modal-container">
         <button class="account-modal-close-btn" onclick="modalCloseHandler('.Signup-modal')"><i class="fas fa-times"></i></button>
 
-        <form method="POST" action="#" class="account-form">
-            {{SignupForm}}
+        <form method="POST" action="{% url 'mylab:signup' %}" class="account-form signup-form">
+            {% csrf_token %} {% for field in SignupForm %} {{field}} {{field.errors}}{% endfor %}
             <button class="account-btn account-form-submit-btn signup-btn">Register</button>
 
             <div class="username-error invalid">
@@ -33,11 +38,13 @@
         </form>
     </div>
 
+
+
     <div class="Find-Account-modal account-modal-container">
         <button class="account-modal-close-btn" onclick="modalCloseHandler('.Signup-modal')"><i class="fas fa-times"></i></button>
 
-        <form method="POST" action="#" class="account-form">
-            {{FindAccountForm}}
+        <form method="POST" action="#" class="account-form findaccount-form">
+            {% csrf_token %} {% for field in FindAccountForm %} {{field}} {{field.errors}}{% endfor %}
             <button class="account-btn account-form-submit-btn">Send Mail</button>
         </form>
     </div>
@@ -56,6 +63,13 @@
     </div>
 </div>
 
-<script src="{% static 'js/signup-validator.js' %}"></script>
+<script src="{% static 'js/const.js' %}"></script>
+<script type="text/javascript">
+    var emailExistCheckURL = "{% url 'mylab:emailExistCheck' %}"
+    var usernameExistCheckURL = "{% url 'mylab:usernameExistCheck' %}"
+    var accountExistCheckURL = "{% url 'mylab:accountExistCheck' %}"
+</script>
+<script src="{% static 'js/signup-validator.js' %}">
+</script>
 <script src="{% static 'js/account-modal.js' %}"></script>
 {% endblock %}
