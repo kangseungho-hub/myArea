@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("momentum/", include("momentum.urls")),
+    path("mylab/account", include("mylab_account.urls")),
     path("mylab/", include("mylab.urls")),
 ]

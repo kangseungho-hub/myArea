@@ -41,7 +41,7 @@
 
 
     <div class="bgImage">
-        {% if requests.session.username %} 
+        {% if request.session.username %} 
         <button class="modal-toggler select-lab-toggler" onclick="modalToggleHandler('.select-lab')"><i class="fas fa-ellipsis-h"></i></button> 
         {% else %}
         {% endif %}

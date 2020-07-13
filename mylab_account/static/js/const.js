@@ -18,6 +18,9 @@ const passwordError = document.querySelector(".password-error-text")
 const login_form = document.querySelector(".login-form")
 const loginUsernameInput = document.querySelector(".login-username")
 const loginPasswordInput = document.querySelector(".login-password")
-
+const loginError = document.querySelector(".login-error-text")
 
 //use for find-account validation
+const findAccountForm = document.querySelector(".findaccount-form")
+const findAccuntError = document.querySelector(".findaccount-error-text")
+const findAccountEmailInput = document.querySelector(".find-account-input")

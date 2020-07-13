@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "momentum",
-    "mylab",
+    "mylab_account",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'my_League.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, "mylab", "templates"), os.path.join(BASE_DIR, "momentum", "templates")],
+        'DIRS': [ os.path.join(BASE_DIR, "mylab_account", "templates"), os.path.join(BASE_DIR, "momentum", "templates"), os.path.join(BASE_DIR, "mylab", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "mylab", "static"),
+    os.path.join(BASE_DIR, "mylab_account", "static"), os.path.join(BASE_DIR, "mylab", "static"),
 )
 
 print(TEMPLATES[0]["DIRS"])
