@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from ckeditor_uploader import views as ckeditor_views
 
 
 urlpatterns = [
@@ -22,4 +25,6 @@ urlpatterns = [
     path("momentum/", include("momentum.urls")),
     path("mylab/account", include("mylab_account.urls")),
     path("mylab/", include("mylab.urls")),
-]
+    path('ckeditor/upload', ckeditor_views.upload, name = "ckeditor_upload"),
+    path("ckeditor/browse", ckeditor_views.browse, name = "ckeditor_browse"),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

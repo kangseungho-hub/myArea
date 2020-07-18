@@ -1,0 +1,63 @@
+.directory-root-container{
+    display : flex;
+    flex-direction: column;
+}
+
+.directory-root-container>.directory-root-item{
+    margin : 0;
+}
+
+.directory-menu{
+    display : flex;
+    order : 1;
+    height: 5%;
+    background-color : #45B8AC;
+    overflow : visible;
+    flex-basis: 1;
+}
+
+.document-list{
+    flex-basis : 3;
+    order : 2;
+    height : 90%;
+    background-color : white;
+}
+
+.directory-menu>.directory-menu-item{
+    display : inline;
+    font-size : 20px;
+    line-height : 45px;
+    margin-left : 10px;
+    color : white;
+    align-items: center;
+}
+
+.directory-menu>button, a, select{
+    cursor: pointer;
+    border : none;
+    background : none;
+}
+
+.directory-lab-name{
+    order : 1;
+}
+
+.directory-name{
+    order : 2;
+}
+
+.select-directory{
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    background-color: white;
+}
+
+.add-directory-btn{
+    order : 3;
+    transition-duration : 0.3s;
+}
+
+.add-directory-btn:hover{
+    font-size : 25px;
+}

@@ -1,45 +1,10 @@
-.select-lab-toggler {
-    margin: 0;
-    position: fixed;
-    border: none;
-    background: none;
-    top: 0px;
-    right: 5px;
-    font-size: 50px;
-    overflow: hidden;
-    color: rgb(96, 190, 134);
-    transition-timing-function: ease-in-out;
-}
-
-.select-lab-toggler:hover {
-    border-width: 1px;
-    cursor: pointer;
-    animation-name: blinking;
-    animation-iteration-count: infinite;
-    animation-duration: 0.5s;
-}
-
-@keyframes blinking {
-    0% {
-        font-size: 50px;
-    }
-    50% {
-        font-size: 60px;
-    }
-    100% {
-        font-size: 50px;
-    }
-}
-
 .select-lab {
     overflow: auto;
     text-align: center;
     font-size: 100px;
 }
 
-.select-lab-close-btn:hover {
-    font-size: 40px;
-}
+
 
 .lab-container {
     margin: 0px;
@@ -49,22 +14,6 @@
 
 .lab-container>.lab {
     float: left;
-}
-
-.select-lab-close-btn {
-    position: fixed;
-    display: block;
-    margin-bottom: 50px;
-    top: 5px;
-    left: 5px;
-    margin: 20px;
-    border: none;
-    background: none;
-    color: rgb(96, 190, 134);
-    font-size: 30px;
-    cursor: pointer;
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.2s;
 }
 
 .lab {

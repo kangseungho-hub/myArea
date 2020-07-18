@@ -1,6 +1,18 @@
 {% extends 'mylab_base.html' %}
-
+{% load static %}
 
 {% block container %}
+
+
+    <div class = "lab-root-container">
+        <div class = "directory-root-container">
+            {% include "mylab/directory.html" %}
+        </div>
+
+        <div class = "document-root-container">
+        </div>
+    </div>
+
     
+
 {% endblock %}

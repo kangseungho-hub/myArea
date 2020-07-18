@@ -5,12 +5,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=decive-width, initial-scale=1.0">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/42e17de142.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'vape.ico' %}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
     <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
     <link rel="stylesheet" href="{% static 'css/lab-select.css' %}" />
     <link rel="stylesheet" href="{% static 'css/background.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+    <link rel = "stylesheet" href = "{% static 'css/mylab/directory-root.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lab-flex.css' %}" />
+
+    <title>just do that shit</title>
 </head>
 
 
@@ -19,7 +25,7 @@
 <body>
 
     <div class="modal-bg select-lab">
-        <button class="select-lab-close-btn" onclick="modalCloseHandler('.select-lab')"><i class="fas fa-times"></i></button>
+        <button class="modal-close-btn" onclick="modalCloseHandler('.select-lab')"><i class="fas fa-times"></i></button>
         <div class="lab-container">
             <div class="lab">
                 <a class="lab-link" href="{% url 'mylab:Python_lab'%}"><img class="logo" src="{% static 'images/python-logo.png' %}" /></a>
@@ -39,19 +45,54 @@
         </div>
     </div>
 
+    <div class = "modal-bg add-document">
+        <div class = "modal-content">
+            <button class="modal-close-btn" onclick="modalCloseHandler('.add-document')"><i class="fas fa-times"></i></button>
+            <form class = "add-document-form" action = "{% url 'mylab:add_document' %}"method = "POST">
+                {% csrf_token %}
+                {{addDocumentForm.media}}
+                {{addDocumentForm.as_p}}
+            <button class = "add-document-submit-btn"> submit </button>
+        </form> 
+        </div>
+    </div>
+
+    <div class = "modal-bg add-directory">
+        <button class="modal-close-btn" onclick="modalCloseHandler('.add-directory')"><i class="fas fa-times"></i></button>
+        <div class = "modal-content">
+            <form class = "add-directory-form" action = "{% url 'mylab:add_directory' %}"method = "POST">
+                {% csrf_token %}
+                {{addDirectoryForm.as_p}}
+                <button class = "add-directory-submit-btn"> Add </button>
+            </form>
+        </div>
+    </div>
+
 
     <div class="bgImage">
-        {% if request.session.username %} 
-        <button class="modal-toggler select-lab-toggler" onclick="modalToggleHandler('.select-lab')"><i class="fas fa-ellipsis-h"></i></button> 
-        {% else %}
-        {% endif %}
+        {% if request.session.username %}
+        <div class="menu-container">
+            <button class= "modal-toggler user-info-toggler"> <i class="fas fa-user"></i> <div class = "username">{{request.session.username}}</div></button>
+            <button class = "modal-toggler add-document-toggler" onclick="modalToggleHandler('.add-document')"><i class="fas fa-plus"></i></button>
+            <button class="modal-toggler select-lab-toggler" onclick="modalToggleHandler('.select-lab')"><i class="fas fa-bars"></i></button>
+            <a class = "logout" href =  "{% url 'mylab_account:logout' %}"> <i class = "fas fa-sign-out-alt"></i></a>
+        </div>
+
         
-        {% block container %} {% endblock %}
+        
+        {% else %} {% endif %} {% block container %} {% endblock %}
     </div>
+
+    
 </body>
 
 
+<script type = "text/javascript">
+    const labPATH = "{% url 'mylab:home' %}"
+</script>
+<script type = "text/javascript" src = "{% static 'js/lab-const.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
+<script type = "text/javascript" src = "{% static 'js/lab-load.js' %}"></script>
 
 
 </html>

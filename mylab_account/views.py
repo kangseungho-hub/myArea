@@ -3,17 +3,22 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from .forms import LoginForm, SignUpForm, FindAccountForm
 from django.views.generic import View
-from django.core.mail import send_mail
 from .models import User
 import json
 
-def mylab_account(request):
-    
-    try:
-        if(request.session["username"]):
-            return redirect("mylab:home")
 
-    except KeyError:
+
+def login_check(active):
+    def wrapper(*a, **k):
+        user_has_login = a[0].session.get("username", "nob")
+        if ( user_has_login == "nob"):
+            return redirect("mylab_account:account")
+        else:
+            return active(*a, *k)
+    return wrapper
+
+
+def mylab_account(request):
         login_form = LoginForm()
         signup_form = SignUpForm()
         find_account_form = FindAccountForm()
@@ -88,8 +93,16 @@ def usernameExistCheck(request):
 
 def findAccount(request):
     return redirect("mylab_account:account")
+
+
 def Logout(request):
-    pass
+    try:
+        del request.session["username"]
+    except KeyError:
+        pass
+
+    return redirect("mylab_account:account")
+    
 
     
     

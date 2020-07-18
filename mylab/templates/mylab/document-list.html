@@ -1,0 +1,9 @@
+{% for document in documents %}
+<p><a class = "load-document-detail" id = {{document.get_absolute_url}}>{{document.title | safe}}</a></p>
+
+{% endfor %}
+
+
+
+
+

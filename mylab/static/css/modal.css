@@ -10,8 +10,50 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+
+.modal-content{
+    position : absolute;
+    top : 20%;
+    left : 35%;
+    text-align : center;
+    overflow : hidden;
+    z-index : 1;
+    width : 30%;
+    height : 60%;
+    animation-name : modal-pop;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes modal-pop{
+    0%{
+        width : 30%;
+        height : 0%;
+    }
+    100%{
+        width : 30%;
+        height : 60%
+    }
+}
+
 .modal-close-btn {
-    float: right;
+    position: fixed;
+    display: block;
+    top: 5px;
+    left: 5px;
+    margin: 20px;
     border: none;
     background: none;
+    color: #45B8AC;
+    font-size: 30px;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
 }
+
+.modal-close-btn:hover {
+    font-size: 40px;
+}
+
+
+.

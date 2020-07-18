@@ -1,0 +1,29 @@
+.lab-root-container{
+    position : fixed;
+    align-items: center;
+    justify-content: space-between;
+    top : 6%;
+    left : 0.5%;
+    border-radius: 1%;;
+    overflow : auto;
+    display : flex;
+    
+    width : 99%;
+    height : 95%;
+}
+
+.lab-root-container>div{
+    background-color : white;
+    margin : 10px;
+    height : 95%;
+}
+
+.directory-root-container{
+    width : 40%;
+    flex-basis : 4;
+}
+
+.document-root-container{
+    width : 60%;
+    flex-basis : 6;
+}

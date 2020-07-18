@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class = "directory-root-item directory-menu">
+    <div class = "directory-menu-item directory-lab-name">
+        {{request.session.lab}}
+    </div>
+
+    
+    <div class = "directory-menu-item directory-name">
+         <select class = "select-directory">
+                 {% for directory in directoryList %}   
+                 <option value="{{directory.name}}">{{directory.name}}</option>
+                 {% endfor %}   
+         </select>
+    </div>
+
+    <button class = "directory-menu-item add-directory-btn" onclick = "modalToggleHandler('.add-directory')"><i class = "fas fa-folder-plus"></i></button> 
+</div> 
+
+<div class = "directory-root-item document-list">
+
+</div>
+

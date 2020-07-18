@@ -1,0 +1,43 @@
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    min-height: 40px;
+    float : left;
+    background-color : rgba(255, 255, 255, 0.1);
+    overflow: visible;
+}
+
+
+/* lab selector */
+
+.menu-container>button, a{
+    height : 100%;
+    margin-top : 0;
+    margin-bottom : 0;
+    margin-left : 10px;
+    margin-right : 10px;
+    background : none;
+    border : none;
+    color : #45B8AC;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    font-size : 20px;
+}
+
+.menu-container>button:hover{
+    cursor : pointer;
+    color : rgba(0, 0, 0, 1)
+}
+
+.select-lab-toggler{
+    position : absolute;
+    right : 0;
+}
+
+.username{
+    display : inline;
+    font-size : 15px;
+}

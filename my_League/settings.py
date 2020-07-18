@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "momentum",
+   "momentum",
+    "mylab",
     "mylab_account",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "ckeditor",
+    "ckeditor_uploader",
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,7 +135,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "mylab_account", "static"), os.path.join(BASE_DIR, "mylab", "static"),
+    os.path.join(BASE_DIR, "mylab_account", "static"), os.path.join(BASE_DIR, "mylab", "static"),os.path.join(BASE_DIR,"static"),
 )
 
-print(TEMPLATES[0]["DIRS"])
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'
+
+SESSION_COOKIE_AGE = 14400
+
+
